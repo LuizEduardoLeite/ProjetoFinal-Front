@@ -1,0 +1,25 @@
+.flex-container{
+    background-color: blueviolet;
+}
+#main-form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.btn{
+    width: 150px;
+}
+
+.flex-container > button{
+    position: absolute;
+    left: 65px;
+    top: 50px;
+    background-color: red;
+}
+
+@media(max-width:437px){
+    #main-form{
+        width:100%;
+    }
+}

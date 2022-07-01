@@ -1,0 +1,39 @@
+
+
+
+<div class="flex-container">
+    <button mat-mini-fab color ="primary" routerLink="/produtos">
+      <mat-icon>arrow_left</mat-icon>
+    </button>
+    <mat-card>
+      <form action="" id="main-form" [formGroup]="produto" (ngSubmit)="submit()">
+  
+        <mat-form-field appearance="outline" >
+          <mat-label>Nome do Produto</mat-label>
+          <input type="text" matInput formControlName="nome">
+          <mat-error>
+            Campo obrigatório!
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" >
+          <mat-label>tipo</mat-label>
+          <input type="text" matInput formControlName="tipo">
+          <mat-error>
+            <span *ngIf="produto.get('tipo')?.getError('required')">Campo obrigatório!</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" >
+          <mat-label>Valor</mat-label>
+          <input type="double" matInput formControlName="valor"[autocomplete]="false">
+          <mat-error>
+            Campo obrigatório!
+          </mat-error>
+        </mat-form-field>
+  
+        <button mat-raised-button color="accent" type="submit" style="margin-top:10px;" [disabled]="!produto.valid">Cadastrar</button>
+  
+      </form>
+    </mat-card>
+  </div>
